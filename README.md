@@ -43,8 +43,8 @@ Incluye autenticación, modo oscuro, recordatorios semanales, y sincronización 
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/compritas-app.git
-cd compritas-app
+git clone https://github.com/tu-usuario/compritas-app.git](https://github.com/richy194/parcial_moviles.git
+
 ```
 
 2. Instala las dependencias:
@@ -85,7 +85,7 @@ npx expo start
 
 Desarrollado por Richy — Proyecto académico de Aplicaciones Móviles.
 
-Si te gustó este proyecto, no olvides darle ⭐ en GitHub.
+es un proyecto bastante novatillo 
 
 ---
 
