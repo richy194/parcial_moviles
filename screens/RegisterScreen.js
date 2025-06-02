@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../services/firebase'; // asegúrate de tener firebase.js exportando auth
+import { auth } from '../services/firebase';
 
 const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -13,10 +13,20 @@ const RegisterScreen = ({ navigation }) => {
       return;
     }
 
+    if (!email.includes('@')) {
+      Alert.alert('Error', 'Ingresa un correo electrónico válido');
+      return;
+    }
+
+    if (password.length < 6) {
+      Alert.alert('Error', 'La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       Alert.alert('¡Registro exitoso!', 'Ahora puedes iniciar sesión');
-      navigation.navigate('Login'); // Asegúrate de tener una ruta llamada "Login"
+      navigation.navigate('Login');
     } catch (error) {
       console.log(error.message);
       Alert.alert('Error al registrar', error.message);
